@@ -30,6 +30,7 @@ CREATE TABLE materia(
 CREATE TABLE matricula( 
     id_estudiante int , 
     id_materia int ,
+    fecha DATETIME NOT NULL,
     FOREIGN KEY (id_estudiante) REFERENCES estudiante(documento), 
     FOREIGN KEY (id_materia) REFERENCES materia(id_materia),
     PRIMARY KEY (id_estudiante, id_materia)
