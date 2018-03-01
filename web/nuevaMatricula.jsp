@@ -1,6 +1,6 @@
 <%-- 
-    Document   : index
-    Created on : 1/03/2018, 03:50:56 PM
+    Document   : nuevaMatricula
+    Created on : 1/03/2018, 04:06:51 PM
     Author     : josefo_1020
 --%>
 
@@ -12,7 +12,6 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <jsp:include page="menu.jsp"></jsp:include>
-        <h1>PÁGINA PARA LA MATRÍCULA DE LOS ESTUDIANTES</h1>
+        <h1>Hello World!</h1>
     </body>
 </html>
