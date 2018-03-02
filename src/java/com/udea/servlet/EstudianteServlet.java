@@ -21,6 +21,9 @@ import javax.servlet.http.HttpServletResponse;
 public class EstudianteServlet extends HttpServlet {
 
     
+    @EJB
+    private EstudianteFacadeLocal estudianteFacade;
+    
     
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -31,24 +34,34 @@ public class EstudianteServlet extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    
-    @EJB
-    private EstudianteFacadeLocal estudianteFacade;
-    
+  
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet EstudianteServlet</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet EstudianteServlet at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+        
+        PrintWriter out = response.getWriter();
+        try {
+            //Si aparece la opcion de listar en el formulario, se lista el tipo de entidad y la consulta findAll que referencia a SELECT
+            //  a .... me crea un atributo sobre el objeto request ... al final va a una vista que le lista todos los datos :D
+            String action = request.getParameter("action");
+            String url = "index.jsp";
+            if ("login".equals(action)) {
+                String username = request.getParameter("username");
+                String password = request.getParameter("password");
+                boolean checklogin = estudianteFacade.checkLog(username, password);
+                if( checklogin){
+                    // si el usuario ya existe, ese atributo login guarda el nombre de fulanito
+                    request.getSession().setAttribute("login", username);
+                    url = "manager.jsp";
+                }
+                else{
+                    url = "login.jsp?error?=1";
+                }
+                
+            }
+            response.sendRedirect(url);
+        }finally {
+            out.close();
         }
     }
 

@@ -9,6 +9,7 @@ import com.udea.entity.Estudiante;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 /**
  *
@@ -32,6 +33,14 @@ public class EstudianteFacade extends AbstractFacade<Estudiante> implements Estu
 
     public EstudianteFacade() {
         super(Estudiante.class);
+    }
+
+    @Override
+    public boolean checkLog(String username, String password) {
+        Query q = em.createQuery("SELECT a FROM estudiante e WHERE e.usuario= :username AND e.contraseña= :password");
+        q.setParameter("username", username);
+        q.setParameter("password", password);
+        return q.getResultList().size()>0;
     }
     
 }

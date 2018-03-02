@@ -35,4 +35,5 @@ public interface EstudianteFacadeLocal {
 
     int count();
     
+    boolean checkLog(String username, String password);
 }
