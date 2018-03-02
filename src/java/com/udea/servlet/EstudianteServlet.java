@@ -6,6 +6,7 @@
 package com.udea.servlet;
 
 import com.udea.ejb.EstudianteFacadeLocal;
+import com.udea.entity.Estudiante;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.ejb.EJB;
@@ -13,6 +14,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
+import sun.misc.IOUtils;
 
 /**
  *
@@ -58,6 +61,23 @@ public class EstudianteServlet extends HttpServlet {
                     url = "login.jsp?error?=1";
                 }
                 
+            }
+            else if("insert".equals(action)){
+
+                Estudiante estudiante = new Estudiante();
+                estudiante.setDocumento(Integer.parseInt(request.getParameter("documento")));
+                estudiante.setApellido(request.getParameter("apellido"));
+                estudiante.setContraseña(request.getParameter("contrasena"));
+                estudiante.setNombre(request.getParameter("nombre"));
+                estudiante.setUsuario(request.getParameter("usuario"));
+                //TODO: hacer lo de los blobs
+                /*Part p = request.getPart("foto");
+                byte[] foto = IOUtils.readNBytes(p.getInputStream(), 0);
+                estudiante.setFoto(foto);*/
+                
+                
+                estudianteFacade.create(estudiante);
+                url = "login.jsp";
             }
             else if("logout".equals(action)){
                 request.getSession().removeAttribute("login");
