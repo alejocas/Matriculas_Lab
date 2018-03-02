@@ -27,37 +27,22 @@
 
                 <table>
                     <tr>
-                        <th>  <label><b>Tipo de documento:</b></label> </th>
+                        <th>  <label><b>Nombre de la Materia:</b></label> </th>
                         <th> 
-                            <input type="text" maxlength="5" class="form-control" name="tipodoc" required=""/>
+                            <input type="text" class="form-control" name="tipodoc" required=""/>
                         </th>
                     </tr>
                     <tr>
-                        <th> <label><b>Número de documento:</b></label></th>
-                        <th><input type="number"  class="form-control" name="numdoc"
+                        <th> <label><b>Código de la materia:</b></label> </th>
+                        <th><input type="text"  class="form-control" name="tipodoc"
                                    required=""/> </th>
                     </tr>
                     <tr>
-                        <th> <label><b>Nombre:</b></label></th>
-                        <th><input type="text"  class="form-control" name="nombre"
+                        <th> <label><b>Horario:</b></label></th>
+                        <th><input type="text"  maxlength="15" class="form-control" name="nombre"
                                    required=""/> </th>
                     </tr>
-                    <tr>
-                        <th> <label><b>Dirección:</b></label></th>
-                        <th><input type="text"  class="form-control" name="direccion"
-                                   required=""/> </th>
-                    </tr>
-                    <tr>
-                        <th> <label><b>Telefono:</b></label></th>
-                        <th><input type="number" p class="form-control" name="telefono"
-                                   required=""/> </th>
-                    </tr>
-                    <tr>
-                        <th> <label><b>Email:</b></label></th>
-                        <th><input type="email"  class="form-control" name="email"
-                                   required=""/> </th>
-                    </tr>
-
+            
                     <div class="break"></div>                        
                     </div>
                     <tr>
@@ -68,6 +53,9 @@
                             <!--            <span class="glyphicons glyphicons-user-add img-circle text-success"></span>-->
                             <input class="btn btn-info btn-lg" type="reset" name="action" value="Reset">
                             <span class="glyphicon glyphicon-remove"></span>
+                            
+                            <input class="btn icon-btn break" type="submit" name="action" value="Finalizar Matricula">
+                            <span class="glyphicon glyphicon-ok-sign"></span>
                         </td>
                     </tr>
                 </table>
