@@ -36,10 +36,11 @@ public class EstudianteFacade extends AbstractFacade<Estudiante> implements Estu
     }
 
     @Override
-    public boolean checkLog(String username, String password) {
-        Query q = em.createQuery("SELECT a FROM estudiante e WHERE e.usuario= :username AND e.contraseña= :password");
-        q.setParameter("username", username);
-        q.setParameter("password", password);
+    public boolean checkLog(String usuario, String contraseña) {
+        String query = "SELECT e FROM Estudiante e WHERE e.usuario = :usuario AND e.contrase\u00f1a = :contrase\u00f1a";
+        Query q = em.createQuery(query);
+        q.setParameter("usuario", usuario);
+        q.setParameter("contrase\u00f1a", contraseña);
         return q.getResultList().size()>0;
     }
     
