@@ -30,7 +30,7 @@
             <div align="center">
                 <h1>Login</h1>
                 <img src="avatar2.png" alt="Avatar" class="avatar">
-                <form action="AccountServlet?action=login" method="post">
+                <form action="EstudianteServlet?action=login" method="post">
                 <table>
                     <tr>
                         <th><label><b>Usuario:</b></label></th>
