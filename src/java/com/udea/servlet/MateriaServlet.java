@@ -5,8 +5,10 @@
  */
 package com.udea.servlet;
 
+import com.udea.ejb.MateriaFacadeLocal;
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -17,7 +19,9 @@ import javax.servlet.http.HttpServletResponse;
  * @author alejandro
  */
 public class MateriaServlet extends HttpServlet {
-
+    
+    @EJB
+    private MateriaFacadeLocal materiaFacade;
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
