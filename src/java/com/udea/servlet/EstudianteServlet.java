@@ -81,7 +81,9 @@ public class EstudianteServlet extends HttpServlet {
             }
             else if("verPerfil".equals(action)){
                 //TODO:hacer ver perfil
-                Object usuario = request.getSession().getAttribute("login");
+                String usuario = (String) request.getSession().getAttribute("login");
+                Estudiante estudiante = estudianteFacade.findByUsuario(usuario);
+                url="verPerfil.jsp";
                 
             }
             else if("logout".equals(action)){
