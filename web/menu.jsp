@@ -12,8 +12,7 @@
 
 </c:if>
 <c:if test="${not empty login}">
-|<a href="AccountServlet?action=logout">Logout</a>|
-|<a href="AccountServlet?action=list">List Accounts</a>|
+|<a href="EstudianteServlet?action=logout">Logout</a>|
 
 </c:if>
 
