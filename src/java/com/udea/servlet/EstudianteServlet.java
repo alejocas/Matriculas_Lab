@@ -59,6 +59,10 @@ public class EstudianteServlet extends HttpServlet {
                 }
                 
             }
+            else if("logout".equals(action)){
+                request.getSession().removeAttribute("login");
+                url = "login.jsp";
+            }
             response.sendRedirect(url);
         }finally {
             out.close();
