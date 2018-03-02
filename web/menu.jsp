@@ -17,8 +17,3 @@
 
 </c:if>
 
-
-
-|<a href="AccountServlet?action=about">About</a>|
-<hr/>
-
