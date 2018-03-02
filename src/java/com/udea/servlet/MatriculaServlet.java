@@ -6,6 +6,7 @@
 package com.udea.servlet;
 
 import com.udea.ejb.MatriculaFacadeLocal;
+import com.udea.entity.Estudiante;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.ejb.EJB;
@@ -35,17 +36,23 @@ public class MatriculaServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet MatriculaServlet</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet MatriculaServlet at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+          PrintWriter out = response.getWriter();
+        try {
+            //Si aparece la opcion de listar en el formulario, se lista el tipo de entidad y la consulta findAll que referencia a SELECT
+            //  a .... me crea un atributo sobre el objeto request ... al final va a una vista que le lista todos los datos :D
+            String action = request.getParameter("action");
+            String url = "index.jsp";
+        
+            if("matricular".equals(action)){
+                //TODO: hacer la matricula
+            }
+            
+            else if("verMatriculas".equals(action)){
+                //TODO: hacer ver matriculas:
+            }
+            response.sendRedirect(url);
+        }finally {
+            out.close();
         }
     }
 

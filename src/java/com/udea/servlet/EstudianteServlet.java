@@ -79,6 +79,11 @@ public class EstudianteServlet extends HttpServlet {
                 estudianteFacade.create(estudiante);
                 url = "login.jsp";
             }
+            else if("verPerfil".equals(action)){
+                //TODO:hacer ver perfil
+                Object usuario = request.getSession().getAttribute("login");
+                
+            }
             else if("logout".equals(action)){
                 request.getSession().removeAttribute("login");
                 url = "login.jsp";
