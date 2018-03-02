@@ -7,8 +7,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <c:if test="${empty login}">
-|<a href="login.jsp">Login</a>|
-|<a href="nuevaMatricula.jsp">Register</a>|
+|<a href="login.jsp">Ingresar</a>|
+|<a href="registro.jsp">Registrarse</a>|
 
 </c:if>
 <c:if test="${not empty login}">
@@ -16,3 +16,9 @@
 |<a href="AccountServlet?action=list">List Accounts</a>|
 
 </c:if>
+
+
+
+|<a href="AccountServlet?action=about">About</a>|
+<hr/>
+
