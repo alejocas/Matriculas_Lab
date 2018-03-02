@@ -24,21 +24,39 @@
             <form action="AccountServlet?action=insert" method="post">
                 <table>
                     <tr>
+                        <th><label><b>Ingrese los nombres:</b></label></th>
+                        <th>
+                            <input type="text" placeholder="Nombres" class="form-control" name="username" required=""/>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th><label><b>Ingrese los apellidos:</b></label></th>
+                        <th>
+                            <input type="text" placeholder="Apellidos" class="form-control" name="username" required=""/>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th><label><b>Ingrese el documento:</b></label></th>
+                        <th>
+                            <input type="text" placeholder="Ingrese el documento de identidad" class="form-control" name="password" required=""/>
+                        </th>
+                    </tr>
+                    <tr>
                         <th><label><b>Ingrese el nombre de usuario:</b></label></th>
                         <th>
                             <input type="text" placeholder="Nombre de usuario" class="form-control" name="username" required=""/>
                         </th>
                     </tr>
                     <tr>
-                        <th><label><b>Ingrese la contraseña:</b></label></th>
+                        <th><label><b>Ingrese la nueva contraseña:</b></label></th>
                         <th>
                             <input type="password" placeholder="Ingrese la contraseña" class="form-control" name="password" required=""/>
                         </th>
                     </tr>
                     <tr>
-                        <th><label><b>Ingrese el email:</b></label></th>
+                        <th><label><b>Ingrese la foto:</b></label></th>
                         <th>
-                            <input type="email" placeholder="Ingrese un email" class="form-control" name="email" required=""/>
+                            <input type="image" placeholder="Ingrese la foto" class="form-control" name="password" required=""/>
                         </th>
                     </tr>
                     <div class="break"></div>
@@ -47,8 +65,11 @@
                         <td colspan="2">
                             <input class="btn icon-btn btn-success" type="submit" name="action" value="Registrarse">
                             <span class="glyphicon glyphicon-ok-sign"></span>
+                            
                             <input class="btn icon-btn btn-lg" type="reset" name="action" value="Resetear datos">
                             <span class="glyphicon glyphicon-remove"></span>
+                            
+                            <input class="btn icon-btn btn-success" type="submit" name="action" value="Examinar foto">
                         </td>
                     </tr>
                 </table>    
