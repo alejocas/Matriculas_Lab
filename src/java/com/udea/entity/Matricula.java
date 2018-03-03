@@ -117,10 +117,7 @@ public class Matricula implements Serializable {
             return false;
         }
         Matricula other = (Matricula) object;
-        if ((this.matriculaPK == null && other.matriculaPK != null) || (this.matriculaPK != null && !this.matriculaPK.equals(other.matriculaPK))) {
-            return false;
-        }
-        return true;
+        return !((this.matriculaPK == null && other.matriculaPK != null) || (this.matriculaPK != null && !this.matriculaPK.equals(other.matriculaPK)));
     }
 
     @Override
