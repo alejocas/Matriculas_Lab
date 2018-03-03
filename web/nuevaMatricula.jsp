@@ -23,7 +23,7 @@
         <h4>Ingrese los campos correctamente, por ejemplo, si necesita la materia Cálculo, digite el nombre <br/>
             completo: "Calculo Diferencial"</h4>
         <div class="container well">
-            <form action="ClienteServlet?action=insert" method="post">
+            <form action="MateriaServlet?action=insert" method="post">
 
                 <table>
                     <tr>

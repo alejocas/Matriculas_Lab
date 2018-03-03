@@ -42,9 +42,11 @@ public class MateriaServlet extends HttpServlet {
     private List<Estudiante> estudianteList;
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws ServletException, IOException 
+    {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
+        PrintWriter out = response.getWriter();
+        try{
             String action = request.getParameter("action");
             String url = "index.jsp";
             if ("insert".equals(action)) {
@@ -57,13 +59,18 @@ public class MateriaServlet extends HttpServlet {
                 request.getSession().setAttribute("estudiante", estudiante);
                 estudianteList.add(estudiante);
                 materia.setEstudianteList(estudianteList);*/
-                
+
                 materiaFacade.create(materia);
                 url = "nuevaMatricula.jsp";
 
             }
+            response.sendRedirect(url);
+        }
+        finally {
+            out.close();
         }
     }
+    
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
