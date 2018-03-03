@@ -8,6 +8,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page import="com.udea.entity.Matricula" %>
 
 <!DOCTYPE html>
 <html>
@@ -33,17 +34,6 @@
                         <th>Horario</th>
                     </tr> 
                 </thead>
-                <!--thead>
-                <tr>
-                    <th>Placa y ciudad</th>
-                    <th>Número de documento</th>
-                    <th>Número de venta</th>
-                    <th>Total de venta</th>
-                    <th>Cantidad</th>
-                    <th>Fecha</th>
-                    <th>Eliminar</th>
-                </tr>
-            </thead-->
         <c:forEach var="a" items="${ventas}">
             <!--tr>
                 <td>${a.placaCiudad}</td>
