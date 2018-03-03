@@ -21,42 +21,42 @@
         <h1>Registrar estudiante</h1>
         <div class="container well">
             <div align="center">
-            <form action="AccountServlet?action=insert" method="post">
+            <form action="EstudianteServlet?action=insert" method="post">
                 <table>
                     <tr>
                         <th><label><b>Ingrese los nombres:</b></label></th>
                         <th>
-                            <input type="text" placeholder="Nombres" class="form-control" name="username" required=""/>
+                            <input type="text" placeholder="Nombres" class="form-control" name="nombre" required=""/>
                         </th>
                     </tr>
                     <tr>
                         <th><label><b>Ingrese los apellidos:</b></label></th>
                         <th>
-                            <input type="text" placeholder="Apellidos" class="form-control" name="username" required=""/>
+                            <input type="text" placeholder="Apellidos" class="form-control" name="apellido" required=""/>
                         </th>
                     </tr>
                     <tr>
                         <th><label><b>Ingrese el documento:</b></label></th>
                         <th>
-                            <input type="text" placeholder="Ingrese el documento de identidad" class="form-control" name="password" required=""/>
+                            <input type="text" placeholder="Ingrese el documento de identidad" class="form-control" name="documento" required=""/>
                         </th>
                     </tr>
                     <tr>
                         <th><label><b>Ingrese el nombre de usuario:</b></label></th>
                         <th>
-                            <input type="text" placeholder="Nombre de usuario" class="form-control" name="username" required=""/>
+                            <input type="text" placeholder="Nombre de usuario" class="form-control" name="usuario" required=""/>
                         </th>
                     </tr>
                     <tr>
                         <th><label><b>Ingrese la nueva contraseña:</b></label></th>
                         <th>
-                            <input type="password" placeholder="Ingrese la contraseña" class="form-control" name="password" required=""/>
+                            <input type="password" placeholder="Ingrese la contraseña" class="form-control" name="contrasena" required=""/>
                         </th>
                     </tr>
                     <tr>
                         <th><label><b>Ingrese la foto:</b></label></th>
                         <th>
-                            <input type="image" placeholder="Ingrese la foto" class="form-control" name="password" required=""/>
+                            <input type="file" placeholder="Ingrese la foto" class="form-control" name="foto" required=""/>
                         </th>
                     </tr>
                     <div class="break"></div>
