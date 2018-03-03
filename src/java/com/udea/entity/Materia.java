@@ -72,10 +72,12 @@ public class Materia implements Serializable {
     public Integer getIdMateria() {
         return idMateria;
     }
-
+    /*
+    No se debe poder modificar la PKo no lo permitamos
+    para evitar complicaciones
     public void setIdMateria(Integer idMateria) {
         this.idMateria = idMateria;
-    }
+    }*/
 
     public String getNombreMateria() {
         return nombreMateria;

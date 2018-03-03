@@ -5,9 +5,13 @@
  */
 package com.udea.servlet;
 
+import com.udea.ejb.EstudianteFacadeLocal;
 import com.udea.ejb.MateriaFacadeLocal;
+import com.udea.entity.Estudiante;
+import com.udea.entity.Materia;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -19,9 +23,13 @@ import javax.servlet.http.HttpServletResponse;
  * @author alejandro
  */
 public class MateriaServlet extends HttpServlet {
-    
+
     @EJB
     private MateriaFacadeLocal materiaFacade;
+
+    @EJB
+    private EstudianteFacadeLocal estudianteFacade;
+
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -31,20 +39,29 @@ public class MateriaServlet extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
+    private List<Estudiante> estudianteList;
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet MateriaServlet</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet MateriaServlet at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+            String action = request.getParameter("action");
+            String url = "index.jsp";
+            if ("insert".equals(action)) {
+                Materia materia = new Materia();
+                materia.setNombreMateria(request.getParameter("nombreMateria"));
+                /*Hasta donde entendí, toma el nombre del estudiante, busca por nombre y trae ese estudiante
+                String url = "index.jsp";
+                String usuario = (String) request.getSession().getAttribute("login");
+                Estudiante estudiante = estudianteFacade.findByUsuario(usuario);
+                request.getSession().setAttribute("estudiante", estudiante);
+                estudianteList.add(estudiante);
+                materia.setEstudianteList(estudianteList);*/
+                
+                materiaFacade.create(materia);
+                url = "nuevaMatricula.jsp";
+
+            }
         }
     }
 

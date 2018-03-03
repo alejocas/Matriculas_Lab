@@ -29,19 +29,21 @@
                     <tr>
                         <th>  <label><b>Nombre de la Materia:</b></label> </th>
                         <th> 
-                            <input type="text" class="form-control" name="tipodoc" required=""/>
+                            <input type="text" class="form-control" name="nombreMateria" required=""/>
                         </th>
                     </tr>
+                    <%-- 
                     <tr>
                         <th> <label><b>Código de la materia:</b></label> </th>
                         <th><input type="text"  class="form-control" name="tipodoc"
                                    required=""/> </th>
                     </tr>
-                    <tr>
+                    --%>
+                    <%--<tr>
                         <th> <label><b>Horario:</b></label></th>
-                        <th><input type="text"  maxlength="15" class="form-control" name="nombre"
+                        <th><input type="text"  maxlength="15" class="form-control" name="horarioMateria"
                                    required=""/> </th>
-                    </tr>
+</tr> --%>
             
                     <div class="break"></div>                        
                     </div>

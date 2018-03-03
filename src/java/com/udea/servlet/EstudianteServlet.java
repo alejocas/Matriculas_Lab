@@ -91,6 +91,10 @@ public class EstudianteServlet extends HttpServlet {
                 request.getSession().removeAttribute("login");
                 url = "login.jsp";
             }
+            else if("matricular".equals(action)){
+                request.getSession().removeAttribute("login");
+                url = "nuevaMatricula.jsp";
+            }
             response.sendRedirect(url);
         }finally {
             out.close();
