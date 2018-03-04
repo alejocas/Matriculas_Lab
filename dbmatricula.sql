@@ -21,7 +21,7 @@ CREATE TABLE estudiante(
     apellido VARCHAR(50) NOT NULL,
     usuario VARCHAR(50) NOT NULL , 
     contraseña VARCHAR(50) NOT NULL,
-    foto BLOB
+    foto Longblob NOT NULL
 );
 
 CREATE TABLE materia( 
