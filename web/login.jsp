@@ -11,22 +11,31 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="style.css">
-        <!-- Optional theme -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">    
-        <!-- Latest compiled and minified JavaScript -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
         <title>Login</title>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
     </head>
     <body>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+     
         <jsp:include page="menu.jsp"></jsp:include>
             <h1>Acceso a la Matricula</h1>
         <c:if test="${param.error==1}">
             <font color="red">Usuario Invalido. Intentelo de nuevo</font>
         </c:if>     
-        <div class="container well">
-            
+        <div class="container">
+            <div class="row ">
+
+                <div class="col s4 offset-s4 z-depth-5">
+                   <input id="disabled" type="text" 
+                               class="validate" value="">
+                        <label for="disabled">Documento</label>
+                </div>
+
+                
+            </div>
             <div align="center">
                 <h1>Login</h1>
                 <img src="avatar2.png" alt="Avatar" class="avatar">

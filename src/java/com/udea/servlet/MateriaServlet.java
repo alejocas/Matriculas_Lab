@@ -50,7 +50,17 @@ public class MateriaServlet extends HttpServlet {
             String action = request.getParameter("action");
             String url = "index.jsp";
             if ("insert".equals(action)) {
-                Materia materia = new Materia();
+                List<Materia> materias = materiaFacade.findAll();
+                Materia materia;
+                if (materias.size()>0) {
+                    Materia ultimo = (Materia) materias.get(materias.size()-1);
+                    materia = new Materia(ultimo.getIdMateria()+1);
+                }
+                else{
+                    materia = new Materia(1);
+
+                }
+               
                 materia.setNombreMateria(request.getParameter("nombreMateria"));
                 /*Hasta donde entendí, toma el nombre del estudiante, busca por nombre y trae ese estudiante
                 String url = "index.jsp";
