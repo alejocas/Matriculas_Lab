@@ -57,7 +57,7 @@
                                     <td>${materia.nombreMateria}</td>
                                     <td>
                                         <button class="btn btn-block waves-effect waves-light" 
-                                                onclick="getMaterias(${idMateria})">
+                                                onclick="registrarMateria(${estudiante.documento},${materia.idMateria})">
                                             MATRICULAR
                                          </button>
                                     </td>
@@ -70,6 +70,9 @@
                       </table>
                 </div>
             </div>
+                <div id="contenedor-matricula" class="row">
+                    asdf
+                </div>
 
             
             <%--<div class="row " style="margin-top: 5%;">

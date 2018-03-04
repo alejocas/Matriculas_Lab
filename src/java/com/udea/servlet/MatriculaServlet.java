@@ -10,6 +10,7 @@ import com.udea.ejb.MateriaFacadeLocal;
 import com.udea.ejb.MatriculaFacadeLocal;
 import com.udea.entity.Estudiante;
 import com.udea.entity.Materia;
+import com.udea.entity.Matricula;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
@@ -52,7 +53,7 @@ public class MatriculaServlet extends HttpServlet {
             //  a .... me crea un atributo sobre el objeto request ... al final va a una vista que le lista todos los datos :D
             String action = request.getParameter("action");
             String url = "index.jsp";
-        
+                    
             if("matricular".equals(action)){
                 List<Materia> materias = materiaFacade.findAll();
                 request.getSession().setAttribute("materias", materias);
@@ -60,13 +61,34 @@ public class MatriculaServlet extends HttpServlet {
                 Estudiante estudiante = estudianteFacade.findByUsuario(usuario);
                 request.getSession().setAttribute("estudiante", estudiante);
                 url="nuevaMatricula.jsp";
+                response.sendRedirect(url);
             }
             
             else if("verMatriculas".equals(action)){
                 //TODO: hacer ver matriculas:
                 
             }
-            response.sendRedirect(url);
+            else if("InsertarMateria".equals(action)){
+                int idMateria = Integer.valueOf(request.getParameter("idMateria"));
+                int idEstudiante = Integer.valueOf(request.getParameter("idEstudiante"));
+
+                
+                Matricula matricula = new Matricula(idEstudiante, idMateria);
+                matriculaFacade.create(matricula);
+                
+                List<Matricula> matriculas = matriculaFacade.findByEstudiante(idEstudiante);
+                String json = "{";
+                for (int i = 0; i < matriculas.size(); i++) {
+                    
+                }
+                
+                response.getWriter().write(matricula.toString());
+                
+            }
+            else{
+                response.sendRedirect(url);
+            }
+            
         }finally {
             out.close();
         }

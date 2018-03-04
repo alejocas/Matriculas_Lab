@@ -8,6 +8,26 @@ $('#holamundo').click(function(){
     console.log('asdflkjasdf');
 });
 
+function registrarMateria(idEstudiante, idMateria){
+        $.ajax({
+               method: "POST",
+               url: "./MatriculaServlet?action=InsertarMateria",
+               data: { 
+                   idEstudiante: idEstudiante,
+                    idMateria: idMateria 
+                },
+                   success : function(response){
+                       console.log(response);
+                   } 
+        }); 
+        console.log(idEstudiante,idMateria);
+        $('#contenedor-matricula').html(`<div id="contenedor-matricula" class="row">
+                ${idEstudiante}    
+        </div>`)
+        
+
+}
+
 function getMaterias(id)
 //$(document).ready(function()
 {
