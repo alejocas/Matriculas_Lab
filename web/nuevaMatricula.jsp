@@ -40,7 +40,7 @@
                     </button>
                 </div>
             </div>
-            <div id="content-materias" class="row">
+            <div id="contenedor-matricula" class="row">
                 <div class="col s8 offset-s2">
                     <table>
                         <thead>
@@ -70,7 +70,7 @@
                       </table>
                 </div>
             </div>
-                <div id="contenedor-matricula" class="row">
+                <div id="contenedor-matriculado" class="row">
                     asdf
                 </div>
 

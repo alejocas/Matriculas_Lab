@@ -13,6 +13,7 @@ import com.udea.entity.Materia;
 import com.udea.entity.Matricula;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Date;
 import java.util.List;
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
@@ -74,15 +75,29 @@ public class MatriculaServlet extends HttpServlet {
 
                 
                 Matricula matricula = new Matricula(idEstudiante, idMateria);
+                matricula.setEstudiante(estudianteFacade.find(idEstudiante));
+                matricula.setMateria(materiaFacade.find(idMateria));
+                matricula.setFecha(new Date());
                 matriculaFacade.create(matricula);
+                /*esto se puede hacer en una funcion por que se necesita para el metodo de eliminar*/
                 
                 List<Matricula> matriculas = matriculaFacade.findByEstudiante(idEstudiante);
-                String json = "{";
+
+                //List<Matricula> matriculas = matriculaFacade.findAll();
+                Materia m;
+                String json = "[";
                 for (int i = 0; i < matriculas.size(); i++) {
+                    m =(Materia) matriculas.get(i).getMateria();
+                    if(m != null){
+                        json = json + "{\"idMateria\": "+String.valueOf(m.getIdMateria())+", \"nombreMateria\": \""+m.getNombreMateria()+"\"}";
+                        if(i<matriculas.size()-1){
+                            json = json + ",";
+                        }
+                    }
                     
                 }
-                
-                response.getWriter().write(matricula.toString());
+        
+                response.getWriter().write(json+"]");
                 
             }
             else{
