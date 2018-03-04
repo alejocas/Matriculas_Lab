@@ -24,10 +24,10 @@
     <div class="nav-wrapper">
       <a href="#" class="brand-logo">Matriculas</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="EstudianteServlet?action=logout">Logout</a></li>
-        <li><a href="EstudianteServlet?action=matricular">Matricularse</a></li>
+        <li><a href="MatriculaServlet?action=matricular">Matricularse</a></li>
         <li><a href="EstudianteServlet?action=verPerfil">Ver Perfil del Estudiante</a></li>
         <li><a href="EstudianteServlet?action=verMatriculas">Ver Matriculas</a></li>
+        <li><a href="EstudianteServlet?action=logout">Logout</a></li>
       </ul>
     </div>
   </nav>
