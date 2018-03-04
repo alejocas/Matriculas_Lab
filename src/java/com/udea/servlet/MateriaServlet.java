@@ -71,9 +71,13 @@ public class MateriaServlet extends HttpServlet {
                 materia.setEstudianteList(estudianteList);*/
 
                 materiaFacade.create(materia);
-                url = "nuevaMatricula.jsp";
 
             }
+            else if(action.equals("getAll")){
+                List<Materia> materias = materiaFacade.findAll();
+                request.setAttribute("materias", materias);
+            }
+            
             response.sendRedirect(url);
         }
         finally {
