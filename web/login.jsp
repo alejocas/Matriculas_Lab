@@ -16,56 +16,54 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
 
     </head>
-    <body>
+    <body style="width: 100%;height: 100%;background-image: url('assets/img/forest-patrol.jpg');">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
      
         <jsp:include page="menu.jsp"></jsp:include>
-            <h1>Acceso a la Matricula</h1>
         <c:if test="${param.error==1}">
             <font color="red">Usuario Invalido. Intentelo de nuevo</font>
         </c:if>     
         <div class="container">
-            <div class="row ">
-
-                <div class="col s4 offset-s4 z-depth-5">
-                   <input id="disabled" type="text" 
-                               class="validate" value="">
-                        <label for="disabled">Documento</label>
-                </div>
-
-                
-            </div>
-            <div align="center">
-                <h1>Login</h1>
-                <img src="avatar2.png" alt="Avatar" class="avatar">
+            <div class="row " style="margin-top: 20%;">
                 <form action="EstudianteServlet?action=login" method="post">
-                <table>
-                    <tr>
-                        <th><label><b>Usuario:</b></label></th>
-                        <th>
-                        <input type="text" placeholder="Ingrese su usuario" class="form-control" name="username" required=""/> 
-                        </th>
-                    </tr>
-                    <tr>
-                        <th><label><b>Contraseña:</b></label></th>
-                        <th>
-                        <input type="password" placeholder="Ingrese su contraseña" class="form-control" name="password" required=""/> 
-                        </th>
-                    </tr>
-                    <div class="break"></div>
-                    <tr>
-                        <td colspan="2">
-                            <input class="btn btn-info btn-lg" type="submit" name="action" value="Ingresar">
-                            <span class="glyphicon glyphicon-lock"></span>
-                            <input class="btn icon-info btn-lg" type="reset" name="action" value="Resetear datos">
-                            <span class="glyphicon glyphicon-remove"></span>
-                        </td>
-                    </tr>
-                </table>     
-        </form>
-                </div>
+                    <div class="col s4 offset-s4 z-depth-5" style="background-color: white">
+                        <div class="row">
+                            <h1 class="center-align">Login</h1>
+                        </div>
+                        <div class="row ">
+                             <div class="input-field col s12">
+                                 <input id="disabled" type="text" name="username" required
+                                            class="validate" value="">
+                                <label for="disabled">Usuario</label>
+                             </div>
+                         </div>
+                         <div class="row ">
+                             <div class="input-field col s12">
+                                <input id="disabled" type="text" name="password" required
+                                            class="validate" value="">
+                                <label for="disabled">Contraseña</label>
+                             </div>
+                         </div>
+                        <br>
+                        <div class="row">
+                            <div class="col s6">
+                                <button class="btn waves-effect waves-light" 
+                                        type="submit" name="action" value="Ingresar">
+                                    Ingresar
+                                    <i class="material-icons right">send</i>
+                                 </button>
+                            </div>
+                            <div class="col s6">
+                                <button class="btn btn-block waves-effect waves-light" 
+                                        type="reset" name="action" value="Resetear Datos">
+                                    Resetear Datos
+                                 </button>
+                            </div>
+                        </div>
+                     </div>
+                </form>             
+            </div>
         </div>
-        <h1></h1>
     </body>
 </html>
