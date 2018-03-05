@@ -5,10 +5,14 @@
  */
 package com.udea.servlet;
 
+import com.udea.ejb.EstudianteFacadeLocal;
+import com.udea.ejb.MateriaFacadeLocal;
 import com.udea.ejb.MatriculaFacadeLocal;
 import com.udea.entity.Estudiante;
+import com.udea.entity.Materia;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -23,6 +27,12 @@ public class MatriculaServlet extends HttpServlet {
 
     @EJB
     private MatriculaFacadeLocal matriculaFacade;
+    
+    @EJB
+    private MateriaFacadeLocal materiaFacade;
+    
+    @EJB
+    private EstudianteFacadeLocal estudianteFacade;
     
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -44,11 +54,17 @@ public class MatriculaServlet extends HttpServlet {
             String url = "index.jsp";
         
             if("matricular".equals(action)){
-                //TODO: hacer la matricula
+                List<Materia> materias = materiaFacade.findAll();
+                request.getSession().setAttribute("materias", materias);
+                String usuario = (String) request.getSession().getAttribute("login");
+                Estudiante estudiante = estudianteFacade.findByUsuario(usuario);
+                request.getSession().setAttribute("estudiante", estudiante);
+                url="nuevaMatricula.jsp";
             }
             
             else if("verMatriculas".equals(action)){
                 //TODO: hacer ver matriculas:
+                
             }
             response.sendRedirect(url);
         }finally {

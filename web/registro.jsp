@@ -10,7 +10,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Login</title>
+        <title>Registro</title>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -102,15 +102,20 @@
                                 </button>
                             </div>
                         </div>
+<<<<<<< HEAD
                     </div>
                     <button id="holamundo" class="btn btn-block waves-effect waves-light" 
                             type="reset">
                         Resetear Datos
                     </button>
+=======
+                     </div>
+>>>>>>> registro_estudiante
                 </form>             
             </div>
         </div>
 
+<<<<<<< HEAD
         <h1>Registrar estudiante</h1>
         <div class="container well">
             <div align="center">
@@ -170,5 +175,7 @@
             </div>
             <br>
         </div>
+=======
+>>>>>>> registro_estudiante
     </body>
 </html>
