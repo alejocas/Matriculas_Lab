@@ -69,15 +69,24 @@
                             </div>
                         </div>
                         <div class="row " >
+                            <div class="file-field input-field col s12">
+                                <div class="btn red accent-2">
+                                  <span>Foto</span>
+                                  <input id="imageUpload" type="file"  name="file">
+                                </div>
+                                <div class="file-path-wrapper">
+                                  <input class="file-path validate" type="text">
+                                </div>
+                              </div>
 
-                            <div class="input-field col 12">
-
+                        <%--<div class="input-field col 12">
+                                
 
                                 
                                 <input id="imageUpload" type="file"  name="file"/>
                                 </input>                              
 
-                            </div>
+                            </div>--%>
                         </div>
 
                         <div class="row">
