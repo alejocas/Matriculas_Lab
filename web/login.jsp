@@ -26,7 +26,7 @@
         </c:if>     
         <div class="container">
             <div class="row " style="margin-top: 20%;">
-                <form action="EstudianteServlet?action=login" method="post">
+                <form action="EstudianteServlet?action=login" enctype="multipart/form-data" method="post">
                     <div class="col s4 offset-s4 z-depth-5" style="background-color: white">
                         <div class="row">
                             <h1 class="center-align">Login</h1>

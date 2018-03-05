@@ -102,21 +102,21 @@
                                 </button>
                             </div>
                         </div>
-<<<<<<< HEAD
+
                     </div>
                     <button id="holamundo" class="btn btn-block waves-effect waves-light" 
                             type="reset">
                         Resetear Datos
                     </button>
-=======
+
                      </div>
->>>>>>> registro_estudiante
+
                 </form>             
             </div>
         </div>
 
-<<<<<<< HEAD
-        <h1>Registrar estudiante</h1>
+
+      <!--  <h1>Registrar estudiante</h1>
         <div class="container well">
             <div align="center">
                 <form action="EstudianteServlet?action=insert" method="post">
@@ -175,7 +175,6 @@
             </div>
             <br>
         </div>
-=======
->>>>>>> registro_estudiante
-    </body>
+
+    </body>-->
 </html>
