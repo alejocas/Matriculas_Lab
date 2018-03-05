@@ -65,7 +65,7 @@
                             <div class="input-field col s12">
                                 <input id="disabled" type="text" name="contrasena" required
                                        class="validate" value="">
-                                <label for="disabled">Documento</label>
+                                <label for="disabled">Contraseña</label>
                             </div>
                         </div>
                         <div class="row " >
@@ -90,7 +90,7 @@
                         <div class="row">
                             <div class="col s6">
                                 <button class="btn waves-effect waves-light" 
-                                        type="submit" name="action" value="Registrarse">
+                                        type="submit" name="EstudianteServlet?action=insert" value="Registrarse">
                                     Ingresar
                                     <i class="material-icons right">send</i>
                                 </button>

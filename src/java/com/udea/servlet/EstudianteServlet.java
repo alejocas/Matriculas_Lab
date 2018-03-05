@@ -75,14 +75,16 @@ public class EstudianteServlet extends HttpServlet {
                 Part part = request.getPart("file");
                         if (part != null && part.getSize() != 0) {
                             InputStream is = part.getInputStream();
-                            byte[] buffer = new byte[is.available()];
+                           byte[] buffer = new byte[is.available()];
                             is.read(buffer);
                             is.close();
                             estudiante.setFoto(buffer);
+                                            System.out.println("Datos: "+ estudiante.showValues());
+                                            System.out.println("holi");
                         } else {
                             estudiante.setFoto(null);
                         }               
-                
+               
                 estudianteFacade.create(estudiante);
                 url = "login.jsp";
             }

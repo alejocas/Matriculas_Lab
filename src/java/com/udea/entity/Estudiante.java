@@ -182,8 +182,8 @@ public class Estudiante implements Serializable {
         return "com.udea.entity.Estudiante[ documento=" + documento + " ]";
     }
 
-    public byte[] getFoto() {
-        return foto;
+    public long getFoto() {
+        return foto.length;
     }
 
     public void setFoto(byte[] foto) {
@@ -211,5 +211,10 @@ public class Estudiante implements Serializable {
         }
         return "";
     }
+     
+     public String showValues(){
+         String values= this.nombre + " "+ this.apellido + " " +this.usuario + "foto "+ this.getFoto();
+     return values;
+     }
     
 }
