@@ -28,6 +28,9 @@
                 <div class="row">
                     <div class="col s12 m4 l3"> 
                         <img class="responsive-img" src="${foto}">
+                        <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+    <i class="material-icons right">Cambiar foto</i>
+  </button>
                 </div>
 
                 <div class="col s12 m8 l9"> 
@@ -45,6 +48,7 @@
 
 
                         <div class="row">
+                     
                             <div class="input-field col s6">
                                 <input id="usuario" type="text" class="validate" value="${estudiante.usuario}">
                                 <label for="usuario">Usuario</label>
@@ -58,12 +62,7 @@
                         <div class="row">
                             <div class="col s8">
                             </div>
-                            <div class="col s4">
-                                <a class="waves-effect waves-light btn">
-                                    <i class="material-icons left">unarchive</i>
-                                    ACTUALIZAR
-                                </a>
-                            </div>
+
                         </div>
                     </form>
 
