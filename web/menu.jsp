@@ -22,7 +22,7 @@
 <c:if test="${not empty login}">
     <nav>
         <div class="nav-wrapper">
-            <a href="index.jsp" class="brand-logo"><i class="material-icons">chrome_reader_mode</i>MatriWeb</a>
+            <a href="manager.jsp" class="brand-logo"><i class="material-icons">chrome_reader_mode</i>MatriWeb</a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <li><a href="MatriculaServlet?action=matricular">Inscribir Matrícula</a></li>
                 <li><a href="EstudianteServlet?action=verMatriculas">Ver Matriculas</a></li>

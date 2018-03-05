@@ -23,7 +23,7 @@
 
         <jsp:include page="menu.jsp"></jsp:include>
         
-            <div style="height: 100%; width: 50%; margin-left: 25%; background-color: white; opacity: 0.9;">
+            <div class="containerView">
                 <h2>Mi Perfil</h2>
                 <div class="row">
                     <div class="col s12 m4 l3"> 
