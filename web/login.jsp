@@ -27,7 +27,7 @@
         <div class="container">
             <div class="row " style="margin-top: 20%;">
                 <form action="EstudianteServlet?action=login" enctype="multipart/form-data" method="post">
-                    <div class="col s4 offset-s4 z-depth-5" style="background-color: white">
+                    <div class="col s6 offset-s3 z-depth-5" style="background-color: white; opacity: 0.9;">
                         <div class="row">
                             <h1 class="center-align">Ingreso</h1>
                         </div>
@@ -50,18 +50,18 @@
                         <br>
                         <div class="row">
                             <div class="col s6">
-                                <button class="btn waves-effect waves-light" 
+                                <button class="btn waves-effect red accent-2" 
                                         type="submit" name="EstudianteServlet?action=insert" value="Ingresar">
                                     Ingresar
                                     <i class="material-icons right">send</i>
                                  </button>
                             </div>
-                            <div class="col s6">
-                                <button class="btn btn-block waves-effect waves-light" 
+                           <!-- <div class="col s6">
+                                <button class="btn btn-block waves-effect red accent-2" 
                                         type="reset" name="action" value="Resetear Datos">
                                     Reanudar datos
                                  </button>
-                            </div>
+                            </div>-->
                         </div>
                      </div>
                 </form>             

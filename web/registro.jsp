@@ -29,7 +29,7 @@
         <div class="container">
             <div class="row " style="margin-top: 5%;">
                 <form action="EstudianteServlet?action=insert" method="post" enctype="multipart/form-data">
-                    <div class="col s6 offset-s3 z-depth-5" style="background-color: white">
+                    <div class="col s6 offset-s3 z-depth-5" style="background-color: white; opacity: 0.9;"  >
                         <div class="row">
                             <h1 class="center-align">Registro</h1>
                         </div>
@@ -82,16 +82,16 @@
 
                         <div class="row">
                             <div class="col s6">
-                                <button class="btn waves-effect waves-light" 
+                                <button class="btn waves-effect red accent-2" 
                                         type="submit" name="EstudianteServlet?action=insert" value="Registrarse">
                                     Ingresar
                                     <i class="material-icons right">send</i>
                                 </button>
                             </div>
-                            <button id="holamundo" class="btn btn-block waves-effect waves-light" 
+                            <!--<button id="holamundo" class="btn btn-block waves-effect waves-light" 
                                     type="reset">
                                 Reanudar 
-                            </button>
+                            </button>-->
 
                         </div>
 
@@ -103,65 +103,4 @@
     </div>
 
 
-    <!--  <h1>Registrar estudiante</h1>
-      <div class="container well">
-          <div align="center">
-              <form action="EstudianteServlet?action=insert" method="post">
-                  <table>
-                      <tr>
-                          <th><label><b>Ingrese los nombres:</b></label></th>
-                          <th>
-                              <input type="text" placeholder="Nombres" class="form-control" name="nombre" required=""/>
-                          </th>
-                      </tr>
-                      <tr>
-                          <th><label><b>Ingrese los apellidos:</b></label></th>
-                          <th>
-                              <input type="text" placeholder="Apellidos" class="form-control" name="apellido" required=""/>
-                          </th>
-                      </tr>
-                      <tr>
-                          <th><label><b>Ingrese el documento:</b></label></th>
-                          <th>
-                              <input type="text" placeholder="Ingrese el documento de identidad" class="form-control" name="documento" required=""/>
-                          </th>
-                      </tr>
-                      <tr>
-                          <th><label><b>Ingrese el nombre de usuario:</b></label></th>
-                          <th>
-                              <input type="text" placeholder="Nombre de usuario" class="form-control" name="usuario" required=""/>
-                          </th>
-                      </tr>
-                      <tr>
-                          <th><label><b>Ingrese la nueva contraseña:</b></label></th>
-                          <th>
-                              <input type="password" placeholder="Ingrese la contraseña" class="form-control" name="contrasena" required=""/>
-                          </th>
-                      </tr>
-                      <tr>
-                          <th><label><b>Ingrese la foto:</b></label></th>
-                          <th>
-                              <input type="file" placeholder="Ingrese la foto" class="form-control" name="foto" required=""/>
-                          </th>
-                      </tr>
-                      <div class="break"></div>
-                      </div>
-                      <tr>
-                          <td colspan="2">
-                              <input class="btn icon-btn btn-success" type="submit" name="action" value="Registrarse">
-                              <span class="glyphicon glyphicon-ok-sign"></span>
-    
-                              <input class="btn icon-btn btn-lg" type="reset" name="action" value="Resetear datos">
-                              <span class="glyphicon glyphicon-remove"></span>
-    
-                              <input class="btn icon-btn btn-success" type="submit" name="action" value="Examinar foto">
-                          </td>
-                      </tr>
-                  </table>    
-              </form> 
-          </div>
-          <br>
-      </div>
-    
-    </body>-->
 </html>

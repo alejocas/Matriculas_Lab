@@ -22,12 +22,12 @@
 <c:if test="${not empty login}">
     <nav>
         <div class="nav-wrapper">
-            <a href="index.jsp" class="brand-logo"><i class="material-icons">chrome_reader_mode</i>Portal matrícula web</a>
+            <a href="index.jsp" class="brand-logo"><i class="material-icons">chrome_reader_mode</i>MatriWeb</a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="MatriculaServlet?action=matricular">Matrícula</a></li>
+                <li><a href="MatriculaServlet?action=matricular">Inscribir Matrícula</a></li>
                 <li><a href="EstudianteServlet?action=verMatriculas">Ver Matriculas</a></li>
                 <li><a href="EstudianteServlet?action=verPerfil">Ver Perfil</a></li>
-                <li><a href="EstudianteServlet?action=logout"><i class="material-icons">undo</i>Salir</a></li>
+                <li><a href="EstudianteServlet?action=logout"><i class="material-icons">undo</i></a></li>
             </ul>
         </div>
     </nav>

@@ -25,7 +25,7 @@
         
         
         <jsp:include page="menu.jsp"></jsp:include>   
-        <div class="container" style="background-color: white">
+        <div class="container" style="background-color: white; opactiy:0.9;">
             
             
             <div class="row">
@@ -34,7 +34,7 @@
                     <h6>Documento:  ${estudiante.documento}</h6>
                 </div>
                 <div class="col s4">
-                    <button class="btn btn-block waves-effect waves-light" 
+                    <button class="btn btn-block waves-effect red accent-2" 
                             onclick="toggleMaterias()">
                         Mostrar Materias
                     </button>
@@ -56,7 +56,7 @@
                                     <td>${materia.idMateria}</td>
                                     <td>${materia.nombreMateria}</td>
                                     <td>
-                                        <button class="btn btn-block waves-effect waves-light" 
+                                        <button class="btn btn-block waves-effect red accent-2" 
                                                 onclick="getMaterias(${idMateria})">
                                             MATRICULAR
                                          </button>

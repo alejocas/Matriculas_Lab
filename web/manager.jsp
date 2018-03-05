@@ -16,10 +16,13 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
          <link rel="stylesheet" href="css/styles.css">
     </head>
-    <body>
+    <body style="width: 100%;height: 100%;background-image: url('assets/img/forest-patrol.jpg');">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
       <jsp:include page="menu.jsp"></jsp:include>
-        <h1>BIENVENIDO A LA PAGINA ${login}</h1>
+      <div class="container">
+          <h1>¡Bienvenido ${login}! Te invitamos a matricular materias </h1>
+      </div>
+        
     </body>
 </html>
