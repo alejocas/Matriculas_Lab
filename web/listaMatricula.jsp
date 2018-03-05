@@ -28,6 +28,7 @@
                         <th>Semestre</th>
                         <th>Código de Materia</th>
                         <th>Nombre de Materia</th>
+                        <th>Eliminar</th>
                     </tr>
                 </thead>
             <c:forEach items="${matriculas}" var="a">
@@ -43,7 +44,9 @@
                 </c:choose>
                 <td>${year}${semestre}</td>
                 <td>${a.materia.idMateria}</td>
-                <td>${a.materia.nombreMateria}</td>     
+                <td>${a.materia.nombreMateria}</td>
+                <td><a onclick="return confirm('¿Está seguro?')" href="MatriculaServlet?action=deleteMateria&idMateria=${a.materia.idMateria}">Delete</a></td>
+                <td></td>
             </tr>
             <hr/>
         </c:forEach>
