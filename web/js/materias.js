@@ -66,7 +66,7 @@ function creaTabla(materias,idEstudiante){
         </div>
     </div>`;
 
-    $('#contenedor-matricula').html(
+    $('#contenedor-matriculado').html(
          tabla
     );
     toggleMaterias();
@@ -98,6 +98,6 @@ function eliminarMateria(idEstudiante,idMateria){
 }
 
 function toggleMaterias(){
-    $("#content-materias").toggle(500);
+    $("#contenedor-matricula").toggle(500);
 }
 

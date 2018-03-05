@@ -65,7 +65,7 @@
                              <div class="input-field col s12">
                                 <input id="disabled" type="text" name="contrasena" required
                                             class="validate" value="">
-                                <label for="disabled">Documento</label>
+                                <label for="disabled">Contraseña</label>
                              </div>
                          </div>
                         <div class="row ">
