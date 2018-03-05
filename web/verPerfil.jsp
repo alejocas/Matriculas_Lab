@@ -26,43 +26,51 @@
             <div  style="height: 100%; width: 50%; margin-left: 25%">
                 <h2>Mi Perfil</h2>
                 <div class="row">
+                    <div class="col s12 m4 l3"> 
+                        <img class="responsive-img" src="${foto}">
+                </div>
+
+                <div class="col s12 m8 l9"> 
                     <form class="col s12">
                         <div class="row">
                             <div class="input-field col s6">
                                 <input  placeholder="Placeholder" id="first_name" type="text" class="validate" value="${estudiante.nombre}">
-                            <label for="first_name">Nombre</label>
+                                <label for="first_name">Nombre</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <input  id="last_name" type="text" class="validate" value="${estudiante.apellido}">
+                                <label for="last_name">Apellido</label>
+                            </div>
                         </div>
-                        <div class="input-field col s6">
-                            <input  id="last_name" type="text" class="validate" value="${estudiante.apellido}">
-                            <label for="last_name">Apellido</label>
-                        </div>
-                    </div>
-                    
-                    <div class="row">
 
-                        <div class="input-field col s12" var="e" items="${estudiante}">
-                            <label for="foto" img src="${e.image}"></label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input id="image" type="password" class="validate">
-                            <label for="password">Password</label>
-                        </div>
-                    </div>
 
-                    <div class="row">
-                        <div class="col s8">
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input id="usuario" type="text" class="validate" value="${estudiante.usuario}">
+                                <label for="usuario">Usuario</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <input id="image" type="password" class="validate" value="${estudiante.contraseña}">
+                                <label for="password">Password</label>
+                            </div>
                         </div>
-                        <div class="col s4">
-                            <a class="waves-effect waves-light btn">
-                                <i class="material-icons left">unarchive</i>
-                                ACTUALIZAR
-                            </a>
+
+                        <div class="row">
+                            <div class="col s8">
+                            </div>
+                            <div class="col s4">
+                                <a class="waves-effect waves-light btn">
+                                    <i class="material-icons left">unarchive</i>
+                                    ACTUALIZAR
+                                </a>
+                            </div>
                         </div>
-                    </div>
-                </form>
+                    </form>
+
+                </div>
+
             </div>
+
         </div>
     </body>
 </html>

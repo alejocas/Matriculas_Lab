@@ -40,7 +40,8 @@
                          </div>
                          <div class="row ">
                              <div class="input-field col s12">
-                                <input id="disabled" type="text" name="password" required
+                                
+                                <input id="password" type="password" name="password" required
                                             class="validate" value="">
                                 <label for="disabled">Contraseña</label>
                              </div>
@@ -49,7 +50,7 @@
                         <div class="row">
                             <div class="col s6">
                                 <button class="btn waves-effect waves-light" 
-                                        type="submit" name="action" value="Ingresar">
+                                        type="submit" name="EstudianteServlet?action=insert" value="Ingresar">
                                     Ingresar
                                     <i class="material-icons right">send</i>
                                  </button>

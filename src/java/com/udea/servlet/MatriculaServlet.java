@@ -10,6 +10,7 @@ import com.udea.ejb.MateriaFacadeLocal;
 import com.udea.ejb.MatriculaFacadeLocal;
 import com.udea.entity.Estudiante;
 import com.udea.entity.Materia;
+import com.udea.entity.Matricula;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
@@ -60,6 +61,9 @@ public class MatriculaServlet extends HttpServlet {
                 Estudiante estudiante = estudianteFacade.findByUsuario(usuario);
                 request.getSession().setAttribute("estudiante", estudiante);
                 url="nuevaMatricula.jsp";
+                int idEstudiante = estudiante.getDocumento();
+         //       Matricula matricula = new Matricula(idEstudiante, request.getParameter("usuario"));
+                
             }
             
             else if("verMatriculas".equals(action)){

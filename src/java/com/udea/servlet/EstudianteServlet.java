@@ -79,8 +79,7 @@ public class EstudianteServlet extends HttpServlet {
                             is.read(buffer);
                             is.close();
                             estudiante.setFoto(buffer);
-                                            System.out.println("Datos: "+ estudiante.showValues());
-                                            System.out.println("holi");
+                                           
                         } else {
                             estudiante.setFoto(null);
                         }               
@@ -94,7 +93,10 @@ public class EstudianteServlet extends HttpServlet {
                 Estudiante estudiante = estudianteFacade.findByUsuario(usuario);
                 request.getSession().setAttribute("estudiante", estudiante);
                 String foto = estudiante.getFotoBase64();
+                request.getSession().setAttribute("foto", foto);
                 request.getSession().setAttribute("estudiante", estudiante);
+                
+
                 url="verPerfil.jsp";
                 
             }

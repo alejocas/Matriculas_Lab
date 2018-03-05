@@ -63,7 +63,7 @@
                         </div>
                         <div class="row ">
                             <div class="input-field col s12">
-                                <input id="disabled" type="text" name="contrasena" required
+                                <input id="password" type="password" name="contrasena" required
                                        class="validate" value="">
                                 <label for="disabled">Contraseña</label>
                             </div>
@@ -75,17 +75,6 @@
 
                         </div>
 
-                        <%-- <div class="row ">
-                             <div class="file-field input-field col s12">
-                                <div class="btn">
-                                  <span>Foto</span>
-                                  <input type="file" name="foto" required>
-                                </div>
-                                <div class="file-path-wrapper">
-                                  <input class="file-path validate" type="text">
-                                </div>
-                              </div>
-                         </div> --%>
                         <br>
                         <div class="row">
                             <div class="col s6">
