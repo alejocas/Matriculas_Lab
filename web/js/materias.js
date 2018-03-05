@@ -38,7 +38,7 @@ function creaTabla(materias,idEstudiante){
             <td>${materia.idMateria}</td>
             <td>${materia.nombreMateria}</td>
             <td>
-                <button class="btn btn-block waves-effect waves-light" 
+                <button class="btn waves-effect red accent-2" 
                         onclick="eliminarMateria(${idEstudiante},${materia.idMateria})">
                     ELIMINAR
                 </button>
