@@ -33,7 +33,7 @@ public interface MatriculaFacadeLocal {
 
     List<Matricula> findRange(int[] range);
     
-    List<Matricula> findByEstudiante(int idEstudiante);
+    List<Matricula> findByIdEstudiante(int id_estudiante);
 
     int count();
     

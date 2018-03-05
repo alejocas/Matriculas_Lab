@@ -56,6 +56,8 @@ public class EstudianteServlet extends HttpServlet {
                 boolean checklogin = estudianteFacade.checkLog(username, password);
                 if( checklogin){
                     // si el usuario ya existe, ese atributo login guarda el nombre de fulanito
+                    Estudiante estudiante = estudianteFacade.findByUsuario(username);
+                    request.getSession().setAttribute("loginDoc", estudiante);
                     request.getSession().setAttribute("login", username);
                     url = "manager.jsp";
                 }

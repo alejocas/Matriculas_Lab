@@ -66,7 +66,12 @@ public class MatriculaServlet extends HttpServlet {
             }
             
             else if("verMatriculas".equals(action)){
-                //TODO: hacer ver matriculas:
+                Estudiante estudiante;
+                estudiante = (Estudiante) request.getSession().getAttribute("loginDoc");
+                    List<Matricula> findById = matriculaFacade.findByIdEstudiante(estudiante.getDocumento());               
+                    request.getSession().setAttribute("matriculas", findById);
+                    url = "listaMatricula.jsp";
+                    response.sendRedirect(url);
                 
             }
             else if("InsertarMateria".equals(action)){
@@ -81,7 +86,7 @@ public class MatriculaServlet extends HttpServlet {
                 matriculaFacade.create(matricula);
                 /*esto se puede hacer en una funcion por que se necesita para el metodo de eliminar*/
                 
-                List<Matricula> matriculas = matriculaFacade.findByEstudiante(idEstudiante);
+                List<Matricula> matriculas = matriculaFacade.findByIdEstudiante(idEstudiante);
 
                 //List<Matricula> matriculas = matriculaFacade.findAll();
                 Materia m;
