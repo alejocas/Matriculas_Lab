@@ -1,7 +1,9 @@
 .content-materias{
     display: none;
 }
- html {
+ html, h1 {
     font-family: GillSans, Calibri, Trebuchet, sans-serif;
   }
-    
+  nav .brand-logo{
+      padding: 5px;
+  }
