@@ -14,7 +14,7 @@
         <title>Login</title>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-
+         <link rel="stylesheet" href="css/styles.css">
     </head>
     <body style="width: 100%;height: 100%;background-image: url('assets/img/forest-patrol.jpg');">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -26,10 +26,10 @@
         </c:if>     
         <div class="container">
             <div class="row " style="margin-top: 20%;">
-                <form action="EstudianteServlet?action=login" method="post">
-                    <div class="col s4 offset-s4 z-depth-5" style="background-color: white">
+                <form action="EstudianteServlet?action=login" enctype="multipart/form-data" method="post">
+                    <div class="col s6 offset-s3 z-depth-5" style="background-color: white; opacity: 0.9;">
                         <div class="row">
-                            <h1 class="center-align">Login</h1>
+                            <h1 class="center-align">Ingreso</h1>
                         </div>
                         <div class="row ">
                              <div class="input-field col s12">
@@ -37,10 +37,12 @@
                                             class="validate" value="">
                                 <label for="disabled">Usuario</label>
                              </div>
+                            
                          </div>
                          <div class="row ">
                              <div class="input-field col s12">
-                                <input id="disabled" type="text" name="password" required
+                                
+                                <input id="password" type="password" name="password" required
                                             class="validate" value="">
                                 <label for="disabled">Contraseña</label>
                              </div>
@@ -48,18 +50,18 @@
                         <br>
                         <div class="row">
                             <div class="col s6">
-                                <button class="btn waves-effect waves-light" 
-                                        type="submit" name="action" value="Ingresar">
+                                <button class="btn waves-effect red accent-2" 
+                                        type="submit" name="EstudianteServlet?action=insert" value="Ingresar">
                                     Ingresar
                                     <i class="material-icons right">send</i>
                                  </button>
                             </div>
-                            <div class="col s6">
-                                <button class="btn btn-block waves-effect waves-light" 
+                           <!-- <div class="col s6">
+                                <button class="btn btn-block waves-effect red accent-2" 
                                         type="reset" name="action" value="Resetear Datos">
-                                    Resetear Datos
+                                    Reanudar datos
                                  </button>
-                            </div>
+                            </div>-->
                         </div>
                      </div>
                 </form>             

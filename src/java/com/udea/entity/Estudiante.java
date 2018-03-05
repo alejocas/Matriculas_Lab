@@ -5,7 +5,12 @@
  */
 package com.udea.entity;
 
+import java.io.BufferedInputStream;
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.io.Serializable;
+import java.net.URLConnection;
 import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
@@ -22,6 +27,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import javax.xml.bind.DatatypeConverter;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 
@@ -49,6 +55,7 @@ public class Estudiante implements Serializable {
     @Lob
     @Column(name = "foto")
     private byte[] foto;
+    
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "estudiante")
     private List<Matricula> matriculaList;
 
@@ -83,6 +90,7 @@ public class Estudiante implements Serializable {
         @JoinColumn(name = "id_materia", referencedColumnName = "id_materia")})
     @ManyToMany
     private List<Materia> materiaList;
+    
 
     public Estudiante() {
     }
@@ -174,8 +182,8 @@ public class Estudiante implements Serializable {
         return "com.udea.entity.Estudiante[ documento=" + documento + " ]";
     }
 
-    public byte[] getFoto() {
-        return foto;
+    public long getFoto() {
+        return foto.length;
     }
 
     public void setFoto(byte[] foto) {
@@ -190,5 +198,23 @@ public class Estudiante implements Serializable {
     public void setMatriculaList(List<Matricula> matriculaList) {
         this.matriculaList = matriculaList;
     }
+    
+     public String getFotoBase64() throws IOException {
+        if (foto != null) {
+            String mimeType;
+            try (InputStream is = new BufferedInputStream(new ByteArrayInputStream(foto))) {
+                mimeType = URLConnection.guessContentTypeFromStream(is);
+            }
+            String base64 = DatatypeConverter.printBase64Binary(foto);
+            System.out.println("data:" + mimeType + ";base64," + base64);
+            return "data:" + mimeType + ";base64," + base64;
+        }
+        return "";
+    }
+     
+     public String showValues(){
+         String values= this.nombre + " "+ this.apellido + " " +this.usuario + "foto "+ this.getFoto();
+     return values;
+     }
     
 }
