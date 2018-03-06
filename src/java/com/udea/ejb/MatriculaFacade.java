@@ -37,10 +37,11 @@ public class MatriculaFacade extends AbstractFacade<Matricula> implements Matric
     }
 
     @Override
-    public List<Matricula> findByEstudiante(int idEstudiante) {
+    public List<Matricula> findByIdEstudiante(int id_estudiante) {
         Query q = em.createNamedQuery("Matricula.findByIdEstudiante");
-        q.setParameter("idEstudiante", idEstudiante);
-        return q.getResultList();
+        q.setParameter("idEstudiante", id_estudiante);
+        List<Matricula> m=  q.getResultList();
+        return m;
     }
     
     
