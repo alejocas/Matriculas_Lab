@@ -4,7 +4,7 @@ Crear una aplicación ​que permita la gestión y/o administración de informac
 Aplicación aplicación **CRUD** (Create/Read/Update/Delete) que consiste en gestionar la inscripción de matrícula para el estudiante.
 
 # Configuración
-1. Configurar la base de datos: En MySQL server crear una base de datos con el nombre *dbmatriculas*. Se adjunta en la carpeta Grab structure tables, los archivos .grap para añadir la table.
+1. Configurar la base de datos: En MySQL server crear una base de datos con el nombre *dbmatricula*. Descargar el esquema *dbmatricula.sql*
 2.  Configurar base de datos al servidor Glassfich: Se debe considerar archivos de configuración para el pool de conexiones con los recursos JDBC.
 En el archivo *Configuration Files/glassfish-resources.xml* tener en cuenta parámetros para la conexción, se muestran acontinuación:
 
