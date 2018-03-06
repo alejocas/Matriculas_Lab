@@ -8,19 +8,21 @@ package com.udea.servlet;
 import com.udea.ejb.EstudianteFacadeLocal;
 import com.udea.entity.Estudiante;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.PrintWriter;
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
-import sun.misc.IOUtils;
 
 /**
  *
  * @author alejandro
  */
+@MultipartConfig
 public class EstudianteServlet extends HttpServlet {
 
     
@@ -54,6 +56,8 @@ public class EstudianteServlet extends HttpServlet {
                 boolean checklogin = estudianteFacade.checkLog(username, password);
                 if( checklogin){
                     // si el usuario ya existe, ese atributo login guarda el nombre de fulanito
+                    Estudiante estudiante = estudianteFacade.findByUsuario(username);
+                    request.getSession().setAttribute("loginEstud", estudiante);
                     request.getSession().setAttribute("login", username);
                     url = "manager.jsp";
                 }
@@ -70,23 +74,41 @@ public class EstudianteServlet extends HttpServlet {
                 estudiante.setContraseña(request.getParameter("contrasena"));
                 estudiante.setNombre(request.getParameter("nombre"));
                 estudiante.setUsuario(request.getParameter("usuario"));
-                //TODO: hacer lo de los blobs
-                /*Part p = request.getPart("foto");
-                byte[] foto = IOUtils.readNBytes(p.getInputStream(), 0);
-                estudiante.setFoto(foto);*/
-                
-                
+                Part part = request.getPart("file");
+                        if (part != null && part.getSize() != 0) {
+                            InputStream is = part.getInputStream();
+                           byte[] buffer = new byte[is.available()];
+                            is.read(buffer);
+                            is.close();
+                            estudiante.setFoto(buffer);
+                                           
+                        } else {
+                            estudiante.setFoto(null);
+                        }               
+               
                 estudianteFacade.create(estudiante);
                 url = "login.jsp";
             }
             else if("verPerfil".equals(action)){
                 //TODO:hacer ver perfil
-                Object usuario = request.getSession().getAttribute("login");
+                String usuario = (String) request.getSession().getAttribute("login");
+                Estudiante estudiante = estudianteFacade.findByUsuario(usuario);
+                request.getSession().setAttribute("estudiante", estudiante);
+                String foto = estudiante.getFotoBase64();
+                request.getSession().setAttribute("foto", foto);
+                request.getSession().setAttribute("estudiante", estudiante);
+                
+
+                url="verPerfil.jsp";
                 
             }
             else if("logout".equals(action)){
                 request.getSession().removeAttribute("login");
                 url = "login.jsp";
+            }
+            else if("matricular".equals(action)){
+                request.getSession().removeAttribute("login");
+                url = "nuevaMatricula.jsp";
             }
             response.sendRedirect(url);
         }finally {

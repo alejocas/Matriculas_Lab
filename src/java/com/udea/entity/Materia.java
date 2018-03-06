@@ -11,6 +11,8 @@ import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.NamedQueries;
@@ -47,6 +49,7 @@ public class Materia implements Serializable {
     @Id
     @Basic(optional = false)
     @NotNull
+    @GeneratedValue(strategy=GenerationType.TABLE)
     @Column(name = "id_materia")
     private Integer idMateria;
     @Basic(optional = false)
@@ -72,10 +75,12 @@ public class Materia implements Serializable {
     public Integer getIdMateria() {
         return idMateria;
     }
-
+    /*
+    No se debe poder modificar la PKo no lo permitamos
+    para evitar complicaciones
     public void setIdMateria(Integer idMateria) {
         this.idMateria = idMateria;
-    }
+    }*/
 
     public String getNombreMateria() {
         return nombreMateria;

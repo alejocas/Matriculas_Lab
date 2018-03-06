@@ -6,9 +6,11 @@
 package com.udea.ejb;
 
 import com.udea.entity.Matricula;
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 /**
  *
@@ -33,5 +35,14 @@ public class MatriculaFacade extends AbstractFacade<Matricula> implements Matric
     public MatriculaFacade() {
         super(Matricula.class);
     }
+
+    @Override
+    public List<Matricula> findByIdEstudiante(int id_estudiante) {
+        Query q = em.createNamedQuery("Matricula.findByIdEstudiante");
+        q.setParameter("idEstudiante", id_estudiante);
+        List<Matricula> m=  q.getResultList();
+        return m;
+    }
+    
     
 }
