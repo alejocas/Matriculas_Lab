@@ -18,3 +18,4 @@ En el archivo *Configuration Files/glassfish-resources.xml* tener en cuenta par�
  - Nombre de la base de datos: *dbmatriculas*
  - Contraseña de acceso
 
+##Se debe considerar que la inserción de materias se realiza desde la base datos
