@@ -1,5 +1,6 @@
 # MatriWeb!
 
+Crear una aplicación ​que permita la gestión y/o administración de información en un sistema de matrículas con funcionamiento CRUD y que a su vez haga uso de herramientas como: un pool de conexiones , recursos ​JDBC (Java DataBase Connectivity), anotaciones ​JPA (Java Persistence Api), clases ​EJB​(Enterprise Entity​ ​Beans),​ ​unidades​ ​de​ ​persistencia,​ ​Servlets​ ​y​ ​​JSP​(Java​ ​Server​ ​Pages).
 Aplicación aplicación **CRUD** (Create/Read/Update/Delete) que consiste en gestionar la inscripción de matrícula para el estudiante.
 
 # Configuración
@@ -18,4 +19,4 @@ En el archivo *Configuration Files/glassfish-resources.xml* tener en cuenta par�
  - Nombre de la base de datos: *dbmatriculas*
  - Contraseña de acceso
 
-##Se debe considerar que la inserción de materias se realiza desde la base datos
+
